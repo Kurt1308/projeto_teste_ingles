@@ -15,19 +15,19 @@ class _SubjectPronounsPageState extends State<SubjectPronounsPage> {
 
   List<Map<String, dynamic>> _questions = [
     {
-      'question': 'I ___ going to the store.',
-      'options': ['am', 'is', 'are', 'be'],
-      'correctAnswer': 'am',
+      'question': '___ estou indo pra loja.',
+      'options': ['I', 'We', 'She', 'It'],
+      'correctAnswer': 'I',
     },
     {
-      'question': 'She ___ reading a book.',
-      'options': ['am', 'is', 'are', 'be'],
-      'correctAnswer': 'is',
+      'question': '___ está lendo um livro.',
+      'options': ['We', 'They', 'She', 'I'],
+      'correctAnswer': 'She',
     },
     {
-      'question': 'They ___ playing soccer.',
-      'options': ['am', 'is', 'are', 'be'],
-      'correctAnswer': 'are',
+      'question': '___ estão jogando futebol comigo.',
+      'options': ['You', 'It', 'They', 'He'],
+      'correctAnswer': 'They',
     },
     {
       'question': 'He ___ a doctor.',
@@ -134,7 +134,7 @@ class _SubjectPronounsPageState extends State<SubjectPronounsPage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Última média alcançada'),
+          title: Text('Média alcançada'),
           content: Text('${average.toStringAsFixed(1)}%'),
           actions: [
             TextButton(
@@ -201,18 +201,22 @@ class _SubjectPronounsPageState extends State<SubjectPronounsPage> {
 
   Widget _buildInitialSlide() {
     return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            'Última média alcançada',
-            style: TextStyle(fontSize: 24),
-          ),
-          Text(
-            '${_lastAverage.toStringAsFixed(1)}%',
-            style: TextStyle(fontSize: 24),
-          ),
-        ],
+      child: Padding(
+        padding:
+            EdgeInsets.symmetric(horizontal: 32.0), // 2cm padding on both sides
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Preencha as lacunas com a opção correta.',
+              style: TextStyle(fontSize: 24),
+            ),
+            // Text(
+            //   '${_lastAverage.toStringAsFixed(1)}%',
+            //   style: TextStyle(fontSize: 24),
+            // ),
+          ],
+        ),
       ),
     );
   }
